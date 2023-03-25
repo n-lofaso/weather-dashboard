@@ -1,72 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather Dashboard</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="./assets/css/style.css" />  
-</head>
-<body>
-    <h1 class="title is-1 has-text-white has-background-link has-text-centered p-3">Weather Dashboard</h1>
-    <div class="columns">
-        <div class="column m-3 is-2">
-            <h2 class="title">Search for a City:</h2>
-                <input class="input" type="text" placeholder="Example: New York">
-                <button class="button is-info mt-2 mb-4 px-6">Search</button>
-                <ul class="prev-searches is-hidden">
-                    <li><button class="button has-background-grey px-6 my-1"></button></li>
-                </ul>
-                
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <header class="d-flex justify-content-center p-2">
+      <h1>Weather Dashboard</h1>
+    </header>
+    <main class="container-fluid">
+      <div class="row">
+        <div class="col-12 col-lg-2 searchCol">
+          <h2 for="city" class="pt-3 pb-3">Search for a City:</h2>
+          <div class="input-group inputForm">
+            <input
+              type="text"
+              class="form-control cityInput"
+              placeholder="Please enter the name of a city"
+              aria-label="City"
+              aria-describedby="input-group-button-right"
+            />
+            <button
+              class="btn btn-info submit-btn"
+              id="input-group-button-right"
+            >
+              Submit
+            </button>
+          </div>
+          <div class="container prev-searches"></div>
         </div>
- 
-        <div class="column m-3 mx-6 is-7">
-            <h2 class="title">Current City</h2>
-            <ul class="weather-info">
-                <li>Temp: </li>
-                <li>Wind: </li>
-                <li>Humidity: </li>
-            </ul>
-        </div>
-    </div>
-            <h2 class="title has-text-centered">5-Day Forcast:</h2>
-
-        <div class="column m-6 is-one-fifth is-flex-direction-row">
-            <div class="card has-background-link has-text-white is-hidden">
-                <div class="card-content">
-                    <h3 class="title is-6 has-text-white"></h3>
-                    
-                    <ul class="five-day-info">
-                        
-                    </ul>
-                </div>
+        <div class="col-12 col-lg-10">
+          <div class="row">
+            <div class="card resultCard">
+              <h2 class="card-header cityName"></h2>
+              <img class="icon" />
+              <div class="card-body current-weather"></div>
             </div>
-
-
+          </div>
+          <div class="row five-day-forecast"></div>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</body>
+      </div>
+    </main>
+    <footer></footer>
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.6/dayjs.min.js"
+      integrity="sha512-hcV6DX35BKgiTiWYrJgPbu3FxS6CsCjKgmrsPRpUPkXWbvPiKxvSVSdhWX0yXcPctOI2FJ4WP6N1zH+17B/sAA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
 </html>
